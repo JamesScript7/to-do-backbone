@@ -5,7 +5,7 @@ var AppView = Backbone.View.extend({
   initialize: function() {
     this.render();
   },
-  template: _.template("<h1>Hello <%= who %>!</h1>"),
+  template: _.template("<h1>Hello <%= who %> from View!</h1>"),
   render: function() {
     this.$el.html(this.template({ who: "World"}));
   }
@@ -27,5 +27,15 @@ var AppView = Backbone.View.extend({
 // $el - cached jQuery object? We can use jQuery functions
 // to push content
 
-var appView = new AppView();
-console.log('Hello World');
+var appView = new AppView(); // You need to create new instance of view to activate it.
+console.log('Hello World from console!');
+
+var app = {}; // creating a namespace
+
+// I believe each backbone model needs to be capitalized.
+app.Todo = Backbone.Model.extend({
+  defaults: {
+    title: '',
+    completed: false
+  }
+});
