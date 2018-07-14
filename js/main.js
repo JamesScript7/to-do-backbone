@@ -19,8 +19,13 @@ var AppView = Backbone.View.extend({
 
 // _.template is so we can dynamically insert data:
 // <%= %> escapes the HTML
-// <%- %> doesn't escape the HTML (for stuff like partials: include();)
+// <%- %> doesn't escape the HTML for stuff like partials: include();
 // <% %> to use JS
+
+// render - Using jQuery inside, set html to the template string.
+
+// $el - cached jQuery object? We can use jQuery functions
+// to push content
 
 var appView = new AppView();
 console.log('Hello World');
