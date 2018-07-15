@@ -28,11 +28,11 @@ var AppView = Backbone.View.extend({
 // to push content
 
 var appView = new AppView(); // You need to create new instance of view to activate it.
-console.log('Hello World from console!');
 
 var app = {}; // creating a namespace
 
 // I believe each backbone model needs to be capitalized.
+// defaults will be available in every instance!
 app.Todo = Backbone.Model.extend({
   defaults: {
     title: '',
@@ -40,5 +40,9 @@ app.Todo = Backbone.Model.extend({
   }
 });
 
+// I believe same way with Views, you need to create a new instance to activate it.
 var test = new app.Todo({title: 'Test title'});
-console.log(test.get('title'));
+test.set('created_at', Date());
+
+// Note: Instantiation aka instance. To instantiate is to create a new instance of an object.
+
