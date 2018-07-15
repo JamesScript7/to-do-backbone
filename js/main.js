@@ -39,3 +39,6 @@ app.Todo = Backbone.Model.extend({
     completed: false
   }
 });
+
+var test = new app.Todo({title: 'Test title'});
+console.log(test.get('title'));
