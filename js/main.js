@@ -41,8 +41,20 @@ app.Todo = Backbone.Model.extend({
 });
 
 // I believe same way with Views, you need to create a new instance to activate it.
-var test = new app.Todo({title: 'Test title'});
-test.set('created_at', Date());
+var todo = new app.Todo({title: 'Test title'});
+todo.set('created_at', Date());
 
-// Note: Instantiation aka instance. To instantiate is to create a new instance of an object.
+// Note:*** Instantiation aka instance. To instantiate is to create a new instance of an object.
 
+// Collections are ordered sets of models (you can get and set models in the collection)
+app.TodoList = Backbone.Collection.extend({
+  models: app.Todo,
+  localStorage: new Store("backbone-todo")
+});
+
+// New instance of a Collection:
+var todoList = new app.TodoList();
+todoList.create({title: 'Learn something new\'s collection'});
+var lmodel = new app.Todo({title: 'Learn Models', completed: true});
+todoList.add(lmodel);
+console.log(todoList.toJSON());
