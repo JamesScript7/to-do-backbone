@@ -66,4 +66,3 @@ todoList.add(lmodel);
 
 console.log(todoList.toJSON());
 // todoList.fetch(); // if we had a server...
-
