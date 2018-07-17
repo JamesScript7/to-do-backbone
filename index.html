@@ -19,19 +19,22 @@
 					<h1>Todos</h1>
 					<input id="new-todo" placeholder="What needs to be done?">
 				</header>
-				<section id="main">
+
+				<div id="main">
 					<ul id="todo-list"></ul>
-				</section>
+				</div>
 			</section>
 		</main>
 
+		<!-- TEMPLATES -->
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox">
 				<label><%- title %></label>
 			</div>
 		</script>
-		
+
+		<!-- LIBRARIES -->
 		<!-- https://jquery.com/download/ -->
 		<!-- https://underscorejs.org/ -->
 		<!-- http://backbonejs.org/ -->

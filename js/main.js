@@ -66,3 +66,16 @@ todoList.add(lmodel);
 
 console.log(todoList.toJSON());
 // todoList.fetch(); // if we had a server...
+
+app.TodoView = Backbone.View.extend({
+  tagName: 'li',
+  template: _.template($('#item-template').html()),
+  render: function() {
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+});
+
+var view = new app.TodoView({model: todoList});
+
+// at this point the app object contains Todo, TodoList, and TodoView.
